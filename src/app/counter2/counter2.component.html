@@ -1,5 +1,8 @@
 <div class="content" role="main">
+counter by {{counterBy}} : <input type="number" name="counterBy" [(ngModel)]="counterBy" >
 
+  <br>
+  <button id="customIncrement" (click)="OnCustomIncrement()">Increment by {{counterBy}} </button>
   <button id="increment" (click)="OnIncrement()">Increment</button>
 
   <div>Current Count 2 : {{ counterDisplay  }}</div>

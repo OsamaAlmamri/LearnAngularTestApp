@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {increment,decrement,reset} from "../../stores/counter2/counter2.actions";
+import {increment, decrement, reset, customIncrement} from "../../stores/counter2/counter2.actions";
 
 @Component({
   selector: 'app-counter2',
@@ -14,10 +14,16 @@ export class Counter2Component implements OnInit{
   }
 
   counterDisplay!:number;
+  counterBy:number=1;
   ngOnInit(): void {
     this.store.select('count2').subscribe(data=>{
      this.counterDisplay=data.counter;
     })
+  }
+  OnCustomIncrement()
+  {
+
+    this.store.dispatch(customIncrement({value:this.counterBy}))
   }
   OnIncrement()
   {
