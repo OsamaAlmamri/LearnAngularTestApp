@@ -5,8 +5,9 @@ counter by {{counterBy}} : <input type="number" name="counterBy" [(ngModel)]="co
   <button id="customIncrement" (click)="OnCustomIncrement()">Increment by {{counterBy}} </button>
   <button id="increment" (click)="OnIncrement()">Increment</button>
 
-  <div>Current Count 2 : {{ counterDisplay  }}</div>
+<!--  <div>Current Count 2 : {{ counterDisplay  }}</div>-->
 <!--  <div>Current Count: {{ counterDisplay$ | async }}</div>-->
+  <div>Current Count : {{ (count2$ | async)?.counter }}</div>
   <button id="decrement" (click)="OnDecrement()">Decrement</button>
 
   <button id="reset" (click)="OnReset()">Reset </button>
