@@ -1,0 +1,19 @@
+
+<div class="content" role="main">
+
+  <form [formGroup]="myModal">
+first name : <input type="text" formControlName="firstName"> <br>
+    <span *ngIf="myModal.get('firstName')?.invalid && (myModal.get('firstName')?.touched )" style="color:red;">
+      user name required
+    </span>
+    {{myModal.get('firstName')?.touched }}
+    <br>
+last name : <input type="text" formControlName="lastName"> <br>
+    <button type="submit" [disabled]="!myModal.valid">send</button>
+  </form>
+
+
+</div>
+
+
+

@@ -1,0 +1,126 @@
+<div class="content" role="main">
+  <div class="card">
+    <p>{{mydate |date:'long'}}</p>
+    <p>{{mydate |date:'short'}}</p>
+    <p>{{mydate |date:'mm:ss'}}</p>
+  </div>
+  <div class="card-container">
+  <div class="card">
+    <p>{{name |uppercase}}</p>
+
+
+  </div>
+  <div class="card">
+
+    <p>{{name |lowercase}}</p>
+
+
+  </div>
+  <div class="card">
+
+    <p>{{name |titlecase}}</p>
+
+  </div>
+  <div class="card">
+
+    <p>{{name |titlecase|slice:5:10}}</p>
+
+  </div>
+  <div class="card">
+
+    {{3.6 | number: '1.0-0'}}
+    <!--will output '4'-->
+
+  </div>
+
+  <div class="card">
+<!--    Generic selector that displays the string that matches the current value.-->
+
+    {{gender | i18nSelect: inviteMap}}
+
+  </div>
+
+    <div class="">
+      discount
+      <input type="number" name="MyDiscount"  [(ngModel)]="MyDiscount" >
+
+
+      <!--    Custom Pipe-->
+    ({{MyDiscount}}) : {{200 | discount:MyDiscount |currency:"USD"}}
+
+  </div>
+
+  <div class="card">
+<!--    Maps a value to a string that pluralizes the value according to locale rules.-->
+
+    {{ messages.length | i18nPlural: messageMapping }}
+
+  </div>
+  <div class="card">
+<!--    Maps a value to a string that pluralizes the value according to locale rules.-->
+
+    {{ [1,2].length | i18nPlural: messageMapping }}
+
+  </div>
+  <div class="card">
+<!--    Maps a value to a string that pluralizes the value according to locale rules.-->
+
+    {{ [1,2,3].length | i18nPlural: messageMapping }}
+
+  </div>
+
+  <div class="card">
+
+    {{ [1,2,3].length | i18nPlural: messageMapping }}
+  </div>
+
+    <p class="card">
+
+      {{pi | number:'1.1-5'}}
+      <!--output: '0 003,14159'-->
+    </p>
+
+ <div class="card">
+   <p>Object</p>
+   <!--  Transforms Object or Map into an array of key value pairs.-->
+   <div *ngFor="let item of object | keyvalue">
+     {{item.key}}:{{item.value}}
+   </div>
+   </div>
+  <div class="card">
+   <p>Map</p>
+   <div *ngFor="let item of map | keyvalue">
+     {{item.key}}:{{item.value}}
+   </div>
+ </div>
+  </div>
+  <div class="">
+    <p>{{amount}}</p>
+    <br>
+    <p>{{amount|currency:"USD"}}</p>
+    <p>{{amount|currency:"SAR"}}</p>
+    <p>B: {{amount | percent:'4.3-5'}}</p>
+
+    <!--output '$0.26'-->
+    <p>A: {{amount | currency}}</p>
+
+    <!--output 'CA$0.26'-->
+    <p>A: {{amount| currency:'CAD'}}</p>
+
+    <!--output 'CAD0.26'-->
+    <p>A: {{amount| currency:'CAD':'code'}}</p>
+
+    <!--output 'CA$0,001.35'-->
+    <p>B: {{amount| currency:'CAD':'symbol':'4.2-2'}}</p>
+
+    <!--output '$0,001.35'-->
+    <p>B: {{amount| currency:'CAD':'symbol-narrow':'4.2-2'}}</p>
+
+    <!--output '0 001,35 CA$'-->
+    <p>B: {{amount| currency:'CAD':'symbol':'4.2-2':'fr'}}</p>
+
+    <!--output 'CLP1' because CLP has no cents-->
+    <p>B: {{amount| currency:'CLP'}}</p>
+  </div>
+
+</div>
