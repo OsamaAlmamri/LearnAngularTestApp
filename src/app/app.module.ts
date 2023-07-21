@@ -22,10 +22,13 @@ import { CustomCounterComponent } from './custom-counter/custom-counter.componen
 import {BlogReducer} from "../stores/Blog/blog.reducer";
 import { BlogComponent } from './blog/blog.component';
 import {AppState} from "../stores/Global/App.state";
+import { AddBlogComponent } from './blog/add-blog/add-blog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     CounterComponent,
     TestPipeComponent,
     HomeComponent,
@@ -35,10 +38,12 @@ import {AppState} from "../stores/Global/App.state";
     Counter2Component,
     DisplayCounterComponent,
     CustomCounterComponent,
-    BlogComponent
+    BlogComponent,
+    AddBlogComponent
   ],
   imports: [
     MaterialModule,
+    BrowserAnimationsModule,
     MaterialExtensionsModule,
     ReactiveFormsModule,
     FormsModule,

@@ -1,7 +1,8 @@
 <div class="" role="main" style="    margin: 82px auto 32px;">
 <p>blogs</p>
+  <button (click)="addBlog()" mat-raised-button color="primary">add Blog</button>
 
-  <mat-card *ngFor="let blog of blogList">
+  <mat-card *ngFor="let blog of blogList" class="example-card">
     <mat-card-header> {{blog.title}} </mat-card-header>
     <mat-card-content> {{blog.description}}</mat-card-content>
     <mat-card-actions>
