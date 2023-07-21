@@ -19,6 +19,8 @@ import {Counter2Reducer} from "../stores/counter2/counter2.reducer";
 import { Counter2Component } from './counter2/counter2.component';
 import { DisplayCounterComponent } from './display-counter/display-counter.component';
 import { CustomCounterComponent } from './custom-counter/custom-counter.component';
+import {BlogReducer} from "../stores/Blog/blog.reducer";
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { CustomCounterComponent } from './custom-counter/custom-counter.componen
     FormComponent,
     Counter2Component,
     DisplayCounterComponent,
-    CustomCounterComponent
+    CustomCounterComponent,
+    BlogComponent
   ],
   imports: [
     MaterialModule,
@@ -40,7 +43,7 @@ import { CustomCounterComponent } from './custom-counter/custom-counter.componen
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ count2:Counter2Reducer ,count: counterReducer}),
+    StoreModule.forRoot({ count2:Counter2Reducer ,count: counterReducer,blog:BlogReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       // logOnly: environment.production, // Restrict extension to log-only mode
