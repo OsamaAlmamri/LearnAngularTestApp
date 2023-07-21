@@ -22,6 +22,7 @@
     "@ng-matero/extensions": "^16.0.3",
     "@ng-matero/extensions-moment-adapter": "^16.0.0",
     "@ngrx/store": "^16.1.0",
+    "@ngrx/store-devtools": "^16.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
