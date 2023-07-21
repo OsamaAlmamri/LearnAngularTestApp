@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import {Store} from "@ngrx/store";
-import {CounterModel} from "../../stores/counter2/counter2.state";
+import {CounterModel} from "../../stores/counter2/counter2.model";
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-display-counter',
