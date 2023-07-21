@@ -16,6 +16,8 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from '../stores/counter/counter.reducer';
 import {Counter2Reducer} from "../stores/counter2/counter2.reducer";
 import { Counter2Component } from './counter2/counter2.component';
+import { DisplayCounterComponent } from './display-counter/display-counter.component';
+import { CustomCounterComponent } from './custom-counter/custom-counter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { Counter2Component } from './counter2/counter2.component';
     SalePipe,
     DiscountPipe,
     FormComponent,
-    Counter2Component
+    Counter2Component,
+    DisplayCounterComponent,
+    CustomCounterComponent
   ],
   imports: [
     MaterialModule,

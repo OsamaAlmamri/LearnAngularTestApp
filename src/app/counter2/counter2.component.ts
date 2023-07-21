@@ -13,14 +13,15 @@ export class Counter2Component implements OnInit{
 
   constructor(private  store:Store<{ count2:CounterModel }>) {
   }
-  count2$ !:Observable<CounterModel>;
-  // counterDisplay!:number;
+
+  channelName!:String;
   counterBy:number=1;
   ngOnInit(): void {
-    // this.store.select('count2').subscribe(data=>{
-    //  this.counterDisplay=data.counter;
-    // });
-    this.count2$= this.store.select('count2');
+    this.store.select('count2').subscribe(data=>{
+     this.channelName=data.channelName;
+     console.log('channelName Display')
+    });
+
   }
   OnCustomIncrement()
   {

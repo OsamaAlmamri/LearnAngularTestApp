@@ -1,6 +1,8 @@
 export interface CounterModel{
-  counter:number
+  counter:number,
+  channelName:string
 }
 export const initialState:CounterModel={
-  counter:0
+  counter:0,
+  channelName:"Osama Almamari"
 }
