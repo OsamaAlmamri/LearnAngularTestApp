@@ -4,6 +4,7 @@ import {increment, decrement, reset, customIncrement} from "../../stores/counter
 import {CounterModel} from "../../stores/counter2/counter2.model";
 
 import { Observable } from 'rxjs';
+import {getChannel} from "../../stores/counter2/counter2.selector";
 @Component({
   selector: 'app-counter2',
   templateUrl: './counter2.component.html',
@@ -18,8 +19,8 @@ export class Counter2Component implements OnInit{
   channelName!:String;
   counterBy:number=1;
   ngOnInit(): void {
-    this.store.select('count2').subscribe(data=>{
-     this.channelName=data.channelName;
+    this.store.select(getChannel).subscribe(data=>{
+     this.channelName=data;
      console.log('channelName Display')
     });
 
