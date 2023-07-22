@@ -30,11 +30,24 @@ export class BlogComponent implements OnInit {
    this.openPopup()
   }
 
-  openPopup()
+  editBlog(id:number)
+  {
+   this.openPopup('edit Blog',id,true)
+  }
+  deleteBlog(id:number)
+  {
+  }
+
+  openPopup(title:string='add Blog',id:number=0,isEdit:boolean=false)
   {
 
     this.dialog.open(AddBlogComponent,{
-      width:'40%'
+      width:'40%',
+      data:{
+        id:id,
+        isEdit:isEdit,
+        title:title,
+      }
     })
   }
 
