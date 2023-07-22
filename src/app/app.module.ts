@@ -24,6 +24,9 @@ import { BlogComponent } from './blog/blog.component';
 import {AppState} from "../stores/Global/App.state";
 import { AddBlogComponent } from './blog/add-blog/add-blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from "@angular/common/http";
+import { EffectsModule } from '@ngrx/effects';
+import {BlogEffects} from "../stores/Blog/blog.effects";
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MaterialModule,
     BrowserAnimationsModule,
     MaterialExtensionsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
@@ -54,6 +58,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       maxAge: 25, // Retains last 25 states
       // logOnly: environment.production, // Restrict extension to log-only mode
     }),
+    EffectsModule.forRoot([BlogEffects]),
 
   ],
   providers: [],

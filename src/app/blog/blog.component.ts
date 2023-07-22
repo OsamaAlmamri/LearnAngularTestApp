@@ -4,7 +4,7 @@ import {BlogModel, Blogs} from "../../stores/Blog/blog.model";
 import {getBlogs} from "../../stores/Blog/blog.selectors";
 import {MatDialog} from "@angular/material/dialog";
 import {AddBlogComponent} from "./add-blog/add-blog.component";
-import {deleteBlog} from "../../stores/Blog/blog.actions";
+import {deleteBlog, loadBlogs} from "../../stores/Blog/blog.actions";
 
 @Component({
   selector: 'app-blog',
@@ -19,6 +19,7 @@ export class BlogComponent implements OnInit {
 
 
   ngOnInit(): void {
+   this.store.dispatch(loadBlogs())
 
     this.store.select(getBlogs).subscribe(items=>{
       this.blogList=items
