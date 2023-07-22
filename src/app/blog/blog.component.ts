@@ -4,6 +4,7 @@ import {BlogModel, Blogs} from "../../stores/Blog/blog.model";
 import {getBlogs} from "../../stores/Blog/blog.selectors";
 import {MatDialog} from "@angular/material/dialog";
 import {AddBlogComponent} from "./add-blog/add-blog.component";
+import {deleteBlog} from "../../stores/Blog/blog.actions";
 
 @Component({
   selector: 'app-blog',
@@ -36,6 +37,10 @@ export class BlogComponent implements OnInit {
   }
   deleteBlog(id:number)
   {
+    if(confirm('Are You Sure You Want Delete This Blog'))
+    {
+      this.store.dispatch(deleteBlog({id:id}))
+    }
   }
 
   openPopup(title:string='add Blog',id:number=0,isEdit:boolean=false)

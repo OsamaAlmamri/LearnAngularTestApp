@@ -6,8 +6,13 @@
     <mat-card-header> {{blog.title}} </mat-card-header>
     <mat-card-content> {{blog.description}}</mat-card-content>
     <mat-card-actions>
-    <button mat-raised-button (click)="editBlog(blog.id)">edit </button>
-    <button mat-raised-button (click)="editBlog(blog.id)" color="warn">delete </button>
+      <mat-icon class="mat-icon-rtl-mirror" svgIcon="thumb-up"></mat-icon>
+      <button mat-raised-button (click)="editBlog(blog.id)" color="primary"><mat-icon fontIcon="edit"></mat-icon> </button>
+    <button mat-raised-button (click)="deleteBlog(blog.id)" color="warn">
+      <mat-icon fontIcon="delete"></mat-icon>
+
+
+    </button>
     </mat-card-actions>
   </mat-card>
 </div>
